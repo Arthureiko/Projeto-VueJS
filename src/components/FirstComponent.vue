@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>Hellow</h1>
-    <p>My name is: {{ nome }}</p>
+    <p v-for="(nomes, i) in nomes" :key="i">My name is: {{ nomes.name }}</p>
   </div>
 </template>
 
@@ -12,6 +12,10 @@ export default {
     return {
       nome: "Arthur",
     };
+  },
+  setup() {
+    const nomes = [{ name: "Arthur" }, { name: "Eiko" }];
+    return { nomes };
   },
 };
 </script>
